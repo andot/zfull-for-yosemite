@@ -10,9 +10,11 @@ Zfull 字体不论在点阵还是矢量方式下显示都非常精美匀称，�
 
 ![系统偏好设置 - 通用](screenshot/1.png "系统偏好设置 - 通用")
 
-![终端](screenshot/2.png "终端")
+![Atom](screenshot/2.png "Atom 下的代码显示效果")
 
-![Atom](screenshot/3.png "Atom 下的代码显示效果")
+![终端](screenshot/3-1.png "终端打开反锯齿的效果")
+
+![终端](screenshot/3-2.png "终端关闭反锯齿的效果")
 
 ![Sublime Text](screenshot/4.png "Sublime Text 3下取消反锯齿后的显示效果")
 
@@ -43,3 +45,50 @@ Zfull 字体不论在点阵还是矢量方式下显示都非常精美匀称，�
 2. 删除 `/System/Library/Fonts/` 下的 `Zfull-GB.ttf` 和 `Zfull-BIG5.ttf`。这一步是可选的，你也可以保留这两个文件。
 
 3. 修复权限（可以使用磁盘工具，也可以参考 `uninstall.sh` 中的修复权限的脚本代码），重启电脑就可以了。
+
+### 关于反锯齿
+
+很多人喜欢 Mac OS X 的平滑字体，也有一些人喜欢点阵字体（比如我），尤其是在非 Retina 屏幕下小字显示时，平滑字体往往显示的是一团糊糊。
+
+这里介绍几个关闭反锯齿效果的小技巧。
+
+#### 关闭系统对于小字的反锯齿效果
+
+    defaults write -g AppleAntiAliasingThreshold 12
+
+在终端下执行上面这条语句就可以关闭小于 12pt 字体的反锯齿效果了。这个字号你也可以写其它的，比如 11，18，24 等等，反正 Zfull 字体 24pt 以下都是包含点阵的。
+
+其实在 Mac OS X 10.8 及其之前版本的`系统偏好设置-通用`中就包含了这个设置，只不过通过选项来选择的字号最大只有 12。
+在 Mac OS X 10.9 及其之后版本的系统中，这个选项被取消了，而且通过该命令行来设置对系统本身也不起作用了。
+所以在 Yosemite 中使用该命令行只对一些比较老的软件起作用，对于系统包含的软件和大部分为 Mac OS X 10.9 以后的系统开发的软件已经不起作用了。
+
+经过测试该方法有作用的软件：
+
+* Microsoft Office 2011
+* Adobe CS 6 (或更早的版本)
+* Adobe Reader
+* 一些使用 Java 6 的软件，如 Eclipse 等。
+
+如果要还原反锯齿效果，执行下面这行命令即可：
+
+    defaults delete -g AppleAntiAliasingThreshold
+
+#### 终端下关闭反锯齿效果
+
+在终端偏好设置中，将字体设置为 Zfull-GB，然后去掉平滑字体前面的对钩即可，如图：
+
+![终端](screenshot/terminal.png "终端如何关闭反锯齿")
+
+#### Sublime Text 下关闭反锯齿效果
+
+在 Sublime Text 的用户设置中加入如下代码即可：
+
+```json
+	"font_face": "Zfull-GB",
+	"font_options":
+	[
+		"no_antialias",
+		"no_italic"
+	],
+	"font_size": 13,
+```
