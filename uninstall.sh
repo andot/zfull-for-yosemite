@@ -13,10 +13,11 @@ sudo chmod 644 "/System/Library/Frameworks/CoreText.framework/Versions/A/Resourc
 sudo chown root:wheel "/System/Library/Frameworks/CoreText.framework/Versions/A/Resources/DefaultFontFallbacks.plist"
 sudo chmod 644 "/System/Library/Frameworks/CoreText.framework/Versions/A/Resources/DefaultFontFallbacks.plist"
 
-echo -e "\033[1;33m正在卸载字体..."
-killall Finder
-sudo rm -Rf "/System/Library/Fonts/Zfull-GB.ttf"
-sudo rm -Rf "/System/Library/Fonts/Zfull-BIG5.ttf"
+# echo -e "\033[1;33m正在卸载字体..."
+# killall Finder
+# sudo rm -Rf "/System/Library/Fonts/Zfull-GB.ttf"
+# sudo rm -Rf "/System/Library/Fonts/Zfull-BIG5.ttf"
+
 sudo atsutil databases -remove
 
 echo -e "\033[1;33m卸载完成，请重启电脑。"
