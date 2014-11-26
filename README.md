@@ -54,9 +54,9 @@ Zfull 字体不论在点阵还是矢量方式下显示都非常精美匀称，�
 
 #### 关闭系统对于小字的反锯齿效果
 
-    defaults write -g AppleAntiAliasingThreshold 12
+    defaults write -g AppleAntiAliasingThreshold 11
 
-在终端下执行上面这条语句就可以关闭小于 12pt 字体的反锯齿效果了。这个字号你也可以写其它的，比如 11，18，24 等等，反正 Zfull 字体 24pt 以下都是包含点阵的。
+在终端下执行上面这条语句就可以关闭小于 11pt 字体的反锯齿效果了。这个字号你也可以写其它的，比如 10，18，24 等等，反正 Zfull 字体 24pt 以下都是包含点阵的。
 
 其实在 Mac OS X 10.8 及其之前版本的`系统偏好设置-通用`中就包含了这个设置，只不过通过选项来选择的字号最大只有 12。
 在 Mac OS X 10.9 及其之后版本的系统中，这个选项被取消了，而且通过该命令行来设置对系统本身也不起作用了。
@@ -66,6 +66,7 @@ Zfull 字体不论在点阵还是矢量方式下显示都非常精美匀称，�
 
 * Microsoft Office 2011
 * Adobe CS 6 (或更早的版本)
+* Adobe Acrobat XI Pro (或更早版本)
 * Adobe Reader
 * 一些使用 Java 6 的软件，如 Eclipse 等。
 
